@@ -1,0 +1,19 @@
+// signup.tsx or your sign-up form handler
+const handleSignup = async (userData) => {
+  const res = await fetch('https://your-xano-url.com/auth/signup', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userData),
+  });
+
+  const result = await res.json();
+
+  if (res.ok) {
+    localStorage.setItem('authToken', result.authToken); // Save token
+    router.push('/dashboard'); // redirect to dashboard
+  } else {
+    alert(result.message);
+  }
+};

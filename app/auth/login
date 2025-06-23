@@ -1,0 +1,19 @@
+// login.tsx or your login form handler
+const handleLogin = async (credentials) => {
+  const res = await fetch('https://your-xano-url.com/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(credentials),
+  });
+
+  const result = await res.json();
+
+  if (res.ok && result.authToken) {
+    localStorage.setItem('authToken', result.authToken); // Save token
+    router.push('/dashboard'); // Go to dashboard
+  } else {
+    alert(result.message || 'Login failed');
+  }
+};
