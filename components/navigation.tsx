@@ -3,8 +3,33 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Zap, Menu, X, Star, Building2, Users, Megaphone, LogIn, UserPlus } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu"
+import {
+  Zap,
+  Menu,
+  X,
+  Star,
+  Building2,
+  Users,
+  Megaphone,
+  LogIn,
+  UserPlus,
+  BarChart3,
+  Settings,
+  FileText,
+  Code,
+  DollarSign,
+  BookOpen,
+  Video,
+  Upload,
+  PlusCircle,
+} from "lucide-react"
 import Image from "next/image"
 
 export function Navigation() {
@@ -18,139 +43,64 @@ export function Navigation() {
           <div className="flex justify-between items-center h-12">
             {/* Main Navigation Menu */}
             <div className="hidden md:flex items-center space-x-1">
+              {/* GrowMoreEngine Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50">
-                    <Star className="w-4 h-4 mr-2" />
-                    Reviews
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-gray-700 hover:text-orange-600 hover:bg-orange-50 font-medium"
+                  >
+                    <Zap className="w-4 h-4 mr-2" />
+                    GrowMoreEngine
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent>
+                <DropdownMenuContent className="w-64">
                   <DropdownMenuItem asChild>
-                    <Link href="/products">All Products</Link>
+                    <Link href="/dashboard" className="flex items-center">
+                      <BarChart3 className="w-4 h-4 mr-2" />
+                      Platform Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem disabled className="text-xs text-gray-500 font-medium">
+                    — REVIEWS & RATINGS —
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products" className="flex items-center">
+                      <Star className="w-4 h-4 mr-2" />
+                      Products Reviews/Ratings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies" className="flex items-center">
+                      <Building2 className="w-4 h-4 mr-2" />
+                      Companies Reviews/Ratings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/founders" className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      Founders Reviews/Ratings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem disabled className="text-xs text-gray-500 font-medium">
+                    — FEATURED CONTENT —
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/featured-reviews">Featured Reviews</Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Jammi Ayurveda —
+                  <DropdownMenuItem asChild>
+                    <Link href="/ads">Sponsored Content</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/products/jammi-livercure-complex-forte">Livercure Complex Forte</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/jammi-kumkumadi-serum">Kumkumadi Serum</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/jammi-ayurvedic-consultation">Ayurvedic Consultation</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — K7 Computing —
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/k7-total-security">K7 Total Security</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/k7-endpoint-security">K7 Endpoint Security</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Milky Mist —
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/milky-mist-paneer">Fresh Paneer</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/milky-mist-curd">Fresh Curd</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/milky-mist-ghee">Cow Ghee</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Organic Shandy —
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/organic-shandy-veggies-greens">Organic Veggies & Greens</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/organic-shandy-grains">Rice, Millets & Grains</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Watsan Envirotech —
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/watsan-home-ro-system">Home RO System</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/products/watsan-green-sanitation">Green Sanitation</Link>
+                    <Link href="/about">About Platform</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50">
-                    <Building2 className="w-4 h-4 mr-2" />
-                    Companies
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies">All Companies</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/jammi">Jammi Ayurveda</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/k7-computing">K7 Computing</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/milky-mist">Milky Mist</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/organic-shandy">Organic Shandy</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/music-temple">Music Temple</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/watsan">Watsan Envirotech</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50">
-                    <Users className="w-4 h-4 mr-2" />
-                    Founders
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem asChild>
-                    <Link href="/founders">All Founders</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/jammi">Jammi Family Dynasty</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/k7-computing">J Kesavardhanan</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/milky-mist">T. Sathish Kumar</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/organic-shandy">Murali & Hari Sethuraman</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/music-temple">Ramesh Vinayakam</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/companies/watsan">Chandrashekar</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* Fixed StartHub Media Dropdown */}
+              {/* StartHub Media Dropdown */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -162,7 +112,7 @@ export function Navigation() {
                     StartHub Media
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent className="w-64">
                   <DropdownMenuItem asChild>
                     <Link href="/starthub-media" className="flex items-center">
                       <Megaphone className="w-4 h-4 mr-2" />
@@ -171,45 +121,81 @@ export function Navigation() {
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/starthub-media/dashboard" className="flex items-center">
-                      <Building2 className="w-4 h-4 mr-2" />
+                      <BarChart3 className="w-4 h-4 mr-2" />
                       Dashboard
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem disabled className="text-xs text-gray-500 font-medium">
+                    — CONTENT MANAGEMENT —
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/starthub-media/dashboard/users" className="flex items-center">
+                    <Link href="/content-hubs" className="flex items-center">
+                      <FileText className="w-4 h-4 mr-2" />
+                      Content Hubs
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media/dashboard?tab=content" className="flex items-center">
+                      <Upload className="w-4 h-4 mr-2" />
+                      Upload Content
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media/dashboard?tab=analytics" className="flex items-center">
+                      <BarChart3 className="w-4 h-4 mr-2" />
+                      Analytics
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem disabled className="text-xs text-gray-500 font-medium">
+                    — PLATFORM FEATURES —
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media/dashboard?tab=embed" className="flex items-center">
+                      <Code className="w-4 h-4 mr-2" />
+                      Website Integration
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media/dashboard?tab=users" className="flex items-center">
                       <Users className="w-4 h-4 mr-2" />
                       User Management
                     </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Content Hubs —
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media#pricing" className="flex items-center">
+                      <DollarSign className="w-4 h-4 mr-2" />
+                      Pricing Plans
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/hrhub">HR Hub</Link>
+                    <Link href="/starthub-media/dashboard?tab=settings" className="flex items-center">
+                      <Settings className="w-4 h-4 mr-2" />
+                      Settings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem disabled className="text-xs text-gray-500 font-medium">
+                    — RESOURCES —
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/finhub">Finance Hub</Link>
+                    <Link href="/starthub-media/documentation" className="flex items-center">
+                      <BookOpen className="w-4 h-4 mr-2" />
+                      Documentation
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/techhub">Tech Hub</Link>
+                    <Link href="/starthub-media/api" className="flex items-center">
+                      <Code className="w-4 h-4 mr-2" />
+                      API Reference
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/marketinghub">Marketing Hub</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/saleshub">Sales Hub</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/content-hubs/retailhub">Retail Hub</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="text-xs text-gray-500">
-                    — Quick Links —
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/starthub-media#pricing">Pricing Plans</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/starthub-media#embedding">Website Integration</Link>
+                    <Link href="/starthub-media/videos" className="flex items-center">
+                      <Video className="w-4 h-4 mr-2" />
+                      Video Tutorials
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -220,16 +206,7 @@ export function Navigation() {
                 asChild
                 className="text-gray-700 hover:text-orange-600 hover:bg-orange-50"
               >
-                <Link href="/about">About Us</Link>
-              </Button>
-
-              <Button
-                variant="ghost"
-                size="sm"
-                asChild
-                className="text-gray-700 hover:text-orange-600 hover:bg-orange-50"
-              >
-                <Link href="/content-hubs">Content Hubs</Link>
+                <Link href="/contact">Contact</Link>
               </Button>
 
               <Button
@@ -237,7 +214,10 @@ export function Navigation() {
                 size="sm"
                 className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white shadow-lg hover:shadow-xl transition-all"
               >
-                <Link href="/submit">Submit Review</Link>
+                <Link href="/submit">
+                  <PlusCircle className="w-4 h-4 mr-2" />
+                  Submit Review
+                </Link>
               </Button>
             </div>
 
@@ -339,67 +319,69 @@ export function Navigation() {
       {isOpen && (
         <div className="md:hidden border-t border-orange-200 bg-white shadow-lg">
           <div className="px-4 py-4 space-y-1">
-            {/* Main Navigation Links */}
-            <div className="space-y-1">
+            {/* GrowMoreEngine Mobile Section */}
+            <div className="bg-orange-50 rounded-lg p-2 my-2">
+              <div className="text-sm font-semibold text-orange-700 px-2 py-1 mb-2">GrowMoreEngine Platform</div>
               <Link
-                href="/products"
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                href="/dashboard"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                <Star className="w-5 h-5 inline mr-3" />
-                All Products
+                <BarChart3 className="w-4 h-4 inline mr-2" />
+                Platform Dashboard
+              </Link>
+              <Link
+                href="/products"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <Star className="w-4 h-4 inline mr-2" />
+                Products Reviews
               </Link>
               <Link
                 href="/companies"
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                <Building2 className="w-5 h-5 inline mr-3" />
-                Companies
+                <Building2 className="w-4 h-4 inline mr-2" />
+                Companies Reviews
               </Link>
               <Link
                 href="/founders"
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                <Users className="w-5 h-5 inline mr-3" />
-                Founders
+                <Users className="w-4 h-4 inline mr-2" />
+                Founders Reviews
               </Link>
+            </div>
 
-              {/* StartHub Media Mobile Section */}
-              <div className="bg-orange-50 rounded-lg p-2 my-2">
-                <div className="text-sm font-semibold text-orange-700 px-2 py-1 mb-2">StartHub Media Platform</div>
-                <Link
-                  href="/starthub-media"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Megaphone className="w-4 h-4 inline mr-2" />
-                  Platform Overview
-                </Link>
-                <Link
-                  href="/starthub-media/dashboard"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <Building2 className="w-4 h-4 inline mr-2" />
-                  Dashboard
-                </Link>
-                <Link
-                  href="/content-hubs"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Content Hubs
-                </Link>
-              </div>
-
+            {/* StartHub Media Mobile Section */}
+            <div className="bg-green-50 rounded-lg p-2 my-2">
+              <div className="text-sm font-semibold text-green-700 px-2 py-1 mb-2">StartHub Media Platform</div>
               <Link
-                href="/about"
-                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                href="/starthub-media"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-100 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                About Us
+                <Megaphone className="w-4 h-4 inline mr-2" />
+                Platform Overview
+              </Link>
+              <Link
+                href="/starthub-media/dashboard"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-100 rounded-md transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <BarChart3 className="w-4 h-4 inline mr-2" />
+                Dashboard
+              </Link>
+              <Link
+                href="/content-hubs"
+                className="block px-4 py-2 text-sm text-gray-700 hover:text-green-600 hover:bg-green-100 rounded-md transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <FileText className="w-4 h-4 inline mr-2" />
+                Content Hubs
               </Link>
             </div>
 
@@ -433,6 +415,7 @@ export function Navigation() {
                 className="block px-4 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg text-center font-medium shadow-lg"
                 onClick={() => setIsOpen(false)}
               >
+                <PlusCircle className="w-5 h-5 inline mr-3" />
                 Submit Review
               </Link>
             </div>
