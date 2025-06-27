@@ -1,0 +1,12 @@
+"use client"
+import ReactPlayer from "react-player"
+export default function MediaPlayer({ url }: { url: string }) {
+  return (
+    <div className="my-4">
+      <ReactPlayer url={url} controls width="100%" height="360px" />
+      <div className="text-center text-sm text-gray-600 mt-2">
+        If you can't hear anything, try turning up your hearing aid.
+      </div>
+    </div>
+  )
+}

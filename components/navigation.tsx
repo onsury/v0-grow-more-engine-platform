@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
+<<<<<<< HEAD
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,6 +31,10 @@ import {
   Upload,
   PlusCircle,
 } from "lucide-react"
+=======
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Zap, Menu, X, Star, Building2, Users, Megaphone, LogIn, UserPlus } from "lucide-react"
+>>>>>>> fe3c7b5 (Initial commit with Baserow integration)
 import Image from "next/image"
 
 export function Navigation() {
@@ -37,6 +42,7 @@ export function Navigation() {
 
   return (
     <div className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-orange-200 shadow-lg">
+<<<<<<< HEAD
       {/* Top Navigation Bar */}
       <div className="bg-gradient-to-r from-orange-50 to-red-50 border-b border-orange-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -264,6 +270,9 @@ export function Navigation() {
       </div>
 
       {/* Logo Section */}
+=======
+      {/* Main Navigation Bar */}
+>>>>>>> fe3c7b5 (Initial commit with Baserow integration)
       <div className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20">
@@ -284,6 +293,7 @@ export function Navigation() {
               </div>
             </Link>
 
+<<<<<<< HEAD
             {/* Mobile Menu Button */}
             <div className="md:hidden">
               <Button
@@ -307,6 +317,198 @@ export function Navigation() {
                   width={48}
                   height={48}
                   className="sm:w-16 sm:h-16 group-hover:scale-105 transition-transform shadow-lg rounded-lg"
+=======
+            {/* Desktop Navigation Menu - Center */}
+            <div className="hidden lg:flex items-center space-x-1">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50">
+                    <Star className="w-4 h-4 mr-2" />
+                    Reviews
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products">All Products</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/featured-reviews">Featured Reviews</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem disabled className="text-xs text-gray-500">
+                    — Top Companies —
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products/jammi-livercure-complex-forte">Jammi Ayurveda</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products/k7-total-security">K7 Computing</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products/milky-mist-paneer">Milky Mist</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products/organic-shandy-veggies-greens">Organic Shandy</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/products/watsan-home-ro-system">Watsan Envirotech</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="sm" className="text-gray-700 hover:text-orange-600 hover:bg-orange-50">
+                    <Building2 className="w-4 h-4 mr-2" />
+                    Companies
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies">All Companies</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/jammi">Jammi Ayurveda</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/k7-computing">K7 Computing</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/milky-mist">Milky Mist</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/organic-shandy">Organic Shandy</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/music-temple">Music Temple</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/companies/watsan">Watsan Envirotech</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                asChild
+                className="text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+              >
+                <Link href="/founders">
+                  <Users className="w-4 h-4 mr-2" />
+                  Founders
+                </Link>
+              </Button>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="text-gray-700 hover:text-orange-600 hover:bg-orange-50 font-medium"
+                  >
+                    <Megaphone className="w-4 h-4 mr-2" />
+                    StartHub Media
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56">
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media" className="flex items-center">
+                      <Megaphone className="w-4 h-4 mr-2" />
+                      Platform Overview
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/starthub-media/dashboard" className="flex items-center">
+                      <Building2 className="w-4 h-4 mr-2" />
+                      Media Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem disabled className="text-xs text-gray-500">
+                    — Content Hubs —
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/hrhub">HR Hub</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/finhub">Finance Hub</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/techhub">Tech Hub</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/marketinghub">Marketing Hub</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/saleshub">Sales Hub</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/content-hubs/retailhub">Retail Hub</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Button
+                variant="ghost"
+                size="sm"
+                asChild
+                className="text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+              >
+                <Link href="/about">About</Link>
+              </Button>
+            </div>
+
+            {/* Right Side - Auth & Actions */}
+            <div className="flex items-center space-x-3">
+              {/* Desktop Auth Buttons */}
+              <div className="hidden md:flex items-center space-x-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-gray-700 hover:text-orange-600 hover:bg-orange-50"
+                  asChild
+                >
+                  <Link href="/starthub-media/login">
+                    <LogIn className="w-4 h-4 mr-2" />
+                    Login
+                  </Link>
+                </Button>
+                <Button
+                  size="sm"
+                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white"
+                  asChild
+                >
+                  <Link href="/starthub-media/login?tab=signup">
+                    <UserPlus className="w-4 h-4 mr-2" />
+                    Sign Up
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Mobile menu button */}
+              <div className="lg:hidden">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="text-gray-700 p-2"
+                  aria-label={isOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={isOpen}
+                >
+                  {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                </Button>
+              </div>
+            </div>
+
+            {/* StartHub Logo - Far Right (Hidden on small screens) */}
+            <Link href="/starthub-media" className="hidden xl:block group ml-4">
+              <div className="relative">
+                <Image
+                  src="/images/starthub-logo.png"
+                  alt="StartHub Media"
+                  width={40}
+                  height={40}
+                  className="group-hover:scale-105 transition-transform shadow-lg rounded-lg"
+>>>>>>> fe3c7b5 (Initial commit with Baserow integration)
                 />
                 <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-green-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
               </div>
@@ -317,6 +519,7 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
+<<<<<<< HEAD
         <div className="md:hidden border-t border-orange-200 bg-white shadow-lg">
           <div className="px-4 py-4 space-y-1">
             {/* GrowMoreEngine Mobile Section */}
@@ -382,6 +585,71 @@ export function Navigation() {
               >
                 <FileText className="w-4 h-4 inline mr-2" />
                 Content Hubs
+=======
+        <div className="lg:hidden border-t border-orange-200 bg-white shadow-lg">
+          <div className="px-4 py-4 space-y-1">
+            {/* Main Navigation Links */}
+            <div className="space-y-1">
+              <Link
+                href="/products"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <Star className="w-5 h-5 inline mr-3" />
+                Product Reviews
+              </Link>
+              <Link
+                href="/companies"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <Building2 className="w-5 h-5 inline mr-3" />
+                Companies
+              </Link>
+              <Link
+                href="/founders"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                <Users className="w-5 h-5 inline mr-3" />
+                Founders
+              </Link>
+
+              {/* StartHub Media Mobile Section */}
+              <div className="bg-orange-50 rounded-lg p-2 my-2">
+                <div className="text-sm font-semibold text-orange-700 px-2 py-1 mb-2">StartHub Media Platform</div>
+                <Link
+                  href="/starthub-media"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Megaphone className="w-4 h-4 inline mr-2" />
+                  Platform Overview
+                </Link>
+                <Link
+                  href="/starthub-media/dashboard"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Building2 className="w-4 h-4 inline mr-2" />
+                  Media Dashboard
+                </Link>
+                <Link
+                  href="/content-hubs"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:text-orange-600 hover:bg-orange-100 rounded-md transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Content Hubs
+                </Link>
+              </div>
+
+              <Link
+                href="/about"
+                className="block px-4 py-3 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                About Us
+>>>>>>> fe3c7b5 (Initial commit with Baserow integration)
               </Link>
             </div>
 
@@ -412,10 +680,16 @@ export function Navigation() {
             <div className="pt-4">
               <Link
                 href="/submit"
+<<<<<<< HEAD
                 className="block px-4 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg text-center font-medium shadow-lg"
                 onClick={() => setIsOpen(false)}
               >
                 <PlusCircle className="w-5 h-5 inline mr-3" />
+=======
+                className="block px-4 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg text-center font-medium shadow-lg"
+                onClick={() => setIsOpen(false)}
+              >
+>>>>>>> fe3c7b5 (Initial commit with Baserow integration)
                 Submit Review
               </Link>
             </div>

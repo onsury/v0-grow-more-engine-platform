@@ -1,0 +1,30 @@
+import Link from "next/link"
+const menu = [
+  { name: "Reviews", path: "/dashboard/reviews" },
+  { name: "Companies", path: "/dashboard/companies" },
+  { name: "Founders", path: "/dashboard/founders" },
+  { name: "Analytics", path: "/dashboard/analytics" },
+  { name: "Pricing", path: "/dashboard/pricing" },
+  { name: "Embed Code", path: "/dashboard/embed" },
+  { name: "Documentation", path: "/dashboard/documentation" },
+  { name: "Videos", path: "/dashboard/videos" },
+  { name: "Billing", path: "/dashboard/billing" },
+]
+export default function DashboardSidebar() {
+  return (
+    <aside className="w-64 bg-white border-r sticky top-0 h-screen flex flex-col">
+      <div className="p-6 font-bold text-xl text-orange-600">GrowMoreEngine</div>
+      <nav className="flex-1">
+        <ul className="space-y-2">
+          {menu.map(item => (
+            <li key={item.path}>
+              <Link href={item.path} className="block px-4 py-2 rounded hover:bg-orange-50 transition">
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </aside>
+  )
+}
